@@ -1,0 +1,17 @@
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+scikit-learn
+xgboost
+shap
+sqlalchemy
+psycopg2-binary
+python-dotenv
+jupyter
+ipykernel
+streamlit
+chromadb
+sentence-transformers
+anthropic
