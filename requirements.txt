@@ -7,7 +7,8 @@ scikit-learn
 xgboost
 shap
 sqlalchemy
-psycopg2-binary
+pymysql
+cryptography
 python-dotenv
 jupyter
 ipykernel
