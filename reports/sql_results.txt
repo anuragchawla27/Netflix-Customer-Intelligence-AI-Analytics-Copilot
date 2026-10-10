@@ -1,0 +1,947 @@
+
+==============================================================================
+Q01  Active customers by country
+==============================================================================
+             country  active_customers
+       United States              1134
+               India               984
+      United Kingdom               489
+              Canada               326
+              Brazil               308
+             Germany               289
+              Mexico               246
+              France               243
+               Japan               217
+         Philippines               186
+           Indonesia               182
+               Italy               180
+        South Africa               179
+             Nigeria               167
+               Spain               165
+           Australia               163
+         South Korea               152
+              Poland               136
+           Argentina               132
+United Arab Emirates               131
+(20 rows)
+
+==============================================================================
+Q02  Total and average monthly revenue per subscription plan
+==============================================================================
+plan_name  total_revenue  avg_monthly_revenue  months_with_revenue
+ Standard      596429.95              6701.46                   89
+  Premium      479630.10              5389.10                   89
+    Basic      320327.66              3599.19                   89
+(3 rows)
+
+==============================================================================
+Q03  Overall churn rate
+==============================================================================
+ total_customers  churned_customers  churn_rate_pct
+            8000             1991.0           24.89
+(1 rows)
+
+==============================================================================
+Q04  Customers and churn rate per acquisition channel
+==============================================================================
+     acquisition_channel  customers  churned  churn_rate_pct
+          Organic Search       1786    445.0           24.92
+             Paid Social       1427    370.0           25.93
+                Referral       1081    259.0           23.96
+               App Store        990    240.0           24.24
+       Affiliate Partner        793    200.0           25.22
+          Email Campaign        785    197.0           25.10
+Partner Bundle (Telecom)        640    151.0           23.59
+                  Direct        498    129.0           25.90
+(8 rows)
+
+==============================================================================
+Q05  Average customer age by (current) subscription plan
+==============================================================================
+plan_name  avg_age  customers_with_known_age
+    Basic     32.7                      3224
+  Premium     32.6                      1546
+ Standard     32.5                      2888
+(3 rows)
+
+==============================================================================
+Q06  Top 10 most-watched titles by total watch minutes
+==============================================================================
+content_id                     title   content_type    genre  total_watch_minutes  sessions
+  CNT00409       Iron Kingdom Part 6        TV Show    Drama               8406.0       160
+  CNT00096            Distant Harbor          Movie   Family               8400.0       157
+  CNT00320              Crimson City        TV Show   Sports               8024.0       167
+  CNT00054             Golden Border Limited Series    Crime               7993.0       156
+  CNT00465      Scarlet River Part 4    Documentary    Crime               7971.0       154
+  CNT00059                 Wild Echo          Movie    Crime               7916.0       156
+  CNT00426 Fractured Frontier Part 2        TV Show Thriller               7869.0       150
+  CNT00303               Iron Empire        TV Show  Mystery               7826.0       149
+  CNT00165                 Last Echo          Movie  Mystery               7765.0       153
+  CNT00307           Crimson Horizon        TV Show   Action               7721.0       150
+(10 rows)
+
+==============================================================================
+Q07  Average completion % by content type and genre
+==============================================================================
+    content_type           genre  avg_completion_pct  sessions
+     Documentary          Sports               72.60       140
+     Documentary          Action               71.90       280
+     Documentary           Drama               71.62       291
+     Documentary         Romance               71.20       133
+     Documentary           Anime               71.18       634
+     Documentary         Fantasy               71.02      1095
+     Documentary         Mystery               70.88       109
+     Documentary     Documentary               70.77       654
+     Documentary           Crime               70.51       284
+     Documentary        Thriller               70.40      1093
+     Documentary Stand-Up Comedy               70.10       496
+     Documentary          Sci-Fi               70.03       948
+     Documentary          Horror               69.78       574
+     Documentary         Reality               69.67       388
+     Documentary          Family               68.69       261
+  Limited Series Stand-Up Comedy               71.86       786
+  Limited Series          Family               71.80       509
+  Limited Series          Horror               71.71       269
+  Limited Series         Fantasy               71.43       141
+  Limited Series        Thriller               70.83       505
+  Limited Series          Action               70.71       651
+  Limited Series          Comedy               70.68       676
+  Limited Series           Crime               70.56       788
+  Limited Series         Reality               70.37       411
+  Limited Series          Sci-Fi               70.35       544
+  Limited Series         Mystery               70.10       825
+  Limited Series         Romance               69.77       633
+  Limited Series     Documentary               69.66       407
+  Limited Series           Anime               69.49       406
+  Limited Series           Drama               68.75       265
+           Movie          Comedy               71.30      2620
+           Movie           Crime               71.09      1093
+           Movie          Action               70.73      1052
+           Movie         Fantasy               70.72      1724
+           Movie         Romance               70.69      1339
+           Movie          Sci-Fi               70.68      2035
+           Movie          Family               70.60      2215
+           Movie        Thriller               70.51      1717
+           Movie          Horror               70.30      2905
+           Movie     Documentary               70.24      1828
+           Movie         Reality               70.22      1758
+           Movie         Mystery               69.99      1450
+           Movie          Sports               69.95      1827
+           Movie           Drama               69.87       934
+           Movie           Anime               69.87      2878
+           Movie Stand-Up Comedy               69.83      1148
+Stand-Up Special          Sports               73.32       101
+Stand-Up Special           Anime               71.76       249
+Stand-Up Special         Mystery               70.97       367
+Stand-Up Special         Reality               70.86       255
+Stand-Up Special         Fantasy               70.73       142
+Stand-Up Special         Romance               70.49       520
+Stand-Up Special          Sci-Fi               69.59       127
+Stand-Up Special     Documentary               69.47       404
+Stand-Up Special           Drama               69.39       270
+Stand-Up Special          Family               69.20       265
+Stand-Up Special          Action               68.61       128
+Stand-Up Special          Horror               67.90       126
+Stand-Up Special        Thriller               67.41       117
+Stand-Up Special Stand-Up Comedy               66.26       234
+... (76 rows total, first 60 shown)
+
+==============================================================================
+Q08  Failed payments in each of the last 12 months (anchored to the last payment month)
+==============================================================================
+payment_month  failed_payments
+      2025-06               95
+      2025-07               85
+      2025-08               82
+      2025-09               80
+      2025-10               98
+      2025-11               74
+      2025-12               84
+      2026-01               91
+      2026-02               66
+      2026-03               82
+      2026-04               96
+      2026-05               88
+(12 rows)
+
+==============================================================================
+Q09  Average resolution time (hours) by issue category
+==============================================================================
+    issue_category  avg_resolution_hours  resolved_tickets
+ Streaming Quality                  18.6              1000
+      Device & App                  18.4               555
+           Content                  18.3               337
+      Subscription                  18.2               662
+    Account Access                  17.8               751
+Billing & Payments                  17.3              1287
+(6 rows)
+
+==============================================================================
+Q10  Distribution of CSAT score across Resolved / Closed tickets
+==============================================================================
+ customer_satisfaction_score  tickets  pct_of_tickets
+                           1      283            6.16
+                           2      858           18.68
+                           3     1506           32.80
+                           4     1279           27.85
+                           5      666           14.50
+(5 rows)
+
+==============================================================================
+Q11  Device type generating the most total viewing minutes
+==============================================================================
+   device_type  total_watch_minutes  pct_of_minutes
+      Smart TV            1215505.0           37.75
+        Mobile             953273.0           29.61
+        Laptop             445523.0           13.84
+        Tablet             381812.0           11.86
+Gaming Console             191162.0            5.94
+       Unknown              32450.0            1.01
+(6 rows)
+
+==============================================================================
+Q12  Average rating by sentiment label (label as supplied in the data)
+==============================================================================
+sentiment_label  avg_rating  reviews
+       Positive        4.40     1978
+        Neutral        3.03     1606
+       Negative        1.64     1462
+(3 rows)
+
+==============================================================================
+Q12b  Same question using the corrected label (the supplied label is ~5% mislabeled)
+==============================================================================
+sentiment_corrected  avg_rating  reviews
+           Positive        4.49     2011
+            Neutral        3.00     1599
+           Negative        1.50     1436
+(3 rows)
+
+==============================================================================
+Q13  New customers per acquisition channel per calendar year
+==============================================================================
+ signup_year      acquisition_channel  customers
+        2019           Organic Search        224
+        2019              Paid Social        188
+        2019                 Referral        145
+        2019                App Store        119
+        2019        Affiliate Partner        115
+        2019           Email Campaign        106
+        2019 Partner Bundle (Telecom)         82
+        2019                   Direct         69
+        2020           Organic Search        233
+        2020              Paid Social        191
+        2020                 Referral        139
+        2020                App Store        134
+        2020           Email Campaign        119
+        2020        Affiliate Partner         90
+        2020 Partner Bundle (Telecom)         89
+        2020                   Direct         46
+        2021           Organic Search        259
+        2021              Paid Social        192
+        2021                App Store        147
+        2021                 Referral        131
+        2021           Email Campaign        116
+        2021        Affiliate Partner        104
+        2021 Partner Bundle (Telecom)         75
+        2021                   Direct         70
+        2022           Organic Search        250
+        2022              Paid Social        208
+        2022                 Referral        148
+        2022                App Store        124
+        2022        Affiliate Partner        116
+        2022 Partner Bundle (Telecom)        108
+        2022           Email Campaign         96
+        2022                   Direct         74
+        2023           Organic Search        258
+        2023              Paid Social        195
+        2023                App Store        145
+        2023                 Referral        138
+        2023           Email Campaign        105
+        2023        Affiliate Partner        102
+        2023 Partner Bundle (Telecom)         76
+        2023                   Direct         68
+        2024           Organic Search        229
+        2024              Paid Social        182
+        2024                 Referral        155
+        2024                App Store        149
+        2024           Email Campaign        112
+        2024        Affiliate Partner        112
+        2024 Partner Bundle (Telecom)         93
+        2024                   Direct         65
+        2025           Organic Search        229
+        2025              Paid Social        198
+        2025                 Referral        152
+        2025        Affiliate Partner        113
+        2025                App Store        111
+        2025           Email Campaign         95
+        2025 Partner Bundle (Telecom)         92
+        2025                   Direct         69
+        2026           Organic Search        104
+        2026              Paid Social         73
+        2026                 Referral         73
+        2026                App Store         61
+... (64 rows total, first 60 shown)
+
+==============================================================================
+Q14  Percentage of customers with auto-renew turned off (current subscription)
+==============================================================================
+ customers  auto_renew_off  pct_auto_renew_off_all  pct_auto_renew_off_active_only
+      8000          1470.0                   18.38                           17.44
+(1 rows)
+
+==============================================================================
+Q15  Customers with more than 3 support tickets
+==============================================================================
+customer_id  ticket_count
+ CUST004986             7
+ CUST007899             7
+ CUST000057             6
+ CUST000777             6
+ CUST001205             6
+ CUST002955             6
+ CUST004588             6
+ CUST006121             6
+ CUST000021             5
+ CUST000110             5
+ CUST001000             5
+ CUST001531             5
+ CUST001562             5
+ CUST001592             5
+ CUST001816             5
+ CUST002160             5
+ CUST002485             5
+ CUST002497             5
+ CUST002589             5
+ CUST002717             5
+ CUST002771             5
+ CUST002786             5
+ CUST003607             5
+ CUST003753             5
+ CUST004043             5
+ CUST004156             5
+ CUST004302             5
+ CUST004369             5
+ CUST005273             5
+ CUST005279             5
+ CUST006764             5
+ CUST007297             5
+ CUST007410             5
+ CUST007444             5
+ CUST007463             5
+ CUST000132             4
+ CUST000503             4
+ CUST000633             4
+ CUST000982             4
+ CUST000988             4
+ CUST001213             4
+ CUST001325             4
+ CUST001346             4
+ CUST001492             4
+ CUST001844             4
+ CUST002042             4
+ CUST002070             4
+ CUST002094             4
+ CUST002149             4
+ CUST002179             4
+ CUST002373             4
+ CUST002649             4
+ CUST002673             4
+ CUST002723             4
+ CUST002837             4
+ CUST002855             4
+ CUST002906             4
+ CUST002967             4
+ CUST003011             4
+ CUST003160             4
+... (120 rows total, first 60 shown)
+
+==============================================================================
+Q16  Rank plans by monthly recurring revenue (monthly_price x active subscriptions)
+==============================================================================
+plan_name  monthly_price  active_subscriptions  monthly_revenue  revenue_rank
+ Standard          15.49                  2276         35255.24             1
+  Premium          22.99                  1251         28760.49             2
+    Basic           6.99                  2482         17349.18             3
+(3 rows)
+
+==============================================================================
+Q17  Most recent support ticket per customer (ROW_NUMBER)
+==============================================================================
+customer_id  ticket_id ticket_date     issue_category        issue_subcategory priority ticket_status  customer_satisfaction_score
+ CUST000001 TCK0000002  2025-02-06     Account Access            Login failure   Medium        Closed                          3.0
+ CUST000002 TCK0000003  2026-06-15 Billing & Payments           Failed payment   Medium      Resolved                          3.0
+ CUST000003 TCK0000004  2021-03-05     Account Access           Account locked      Low     Escalated                          NaN
+ CUST000007 TCK0000005  2026-02-16     Account Access           Account locked   Medium      Resolved                          3.0
+ CUST000010 TCK0000006  2023-02-01       Device & App         Download failure      Low      Resolved                          5.0
+ CUST000011 TCK0000007  2022-09-06 Billing & Payments           Failed payment   Medium        Closed                          3.0
+ CUST000012 TCK0000008  2023-09-22     Account Access            Login failure   Medium      Resolved                          5.0
+ CUST000013 TCK0000010  2026-06-14  Streaming Quality           Low resolution   Medium     Escalated                          NaN
+ CUST000014 TCK0000011  2025-11-01 Billing & Payments         Invoice question   Medium      Resolved                          3.0
+ CUST000021 TCK0000015  2026-04-08 Billing & Payments         Duplicate charge   Medium        Closed                          3.0
+ CUST000022 TCK0000017  2026-04-17 Billing & Payments           Failed payment   Medium     Escalated                          NaN
+ CUST000023 TCK0000019  2026-06-29       Device & App          App not loading     High        Closed                          3.0
+ CUST000025 TCK0000020  2025-11-19       Subscription     Cancellation request      Low      Resolved                          5.0
+ CUST000026 TCK0000021  2026-05-03 Billing & Payments           Failed payment   Medium      Resolved                          3.0
+ CUST000027 TCK0000022  2023-08-31  Streaming Quality             App crashing     High       Pending                          NaN
+ CUST000028 TCK0000023  2025-10-07            Content          Content removed      Low      Resolved                          3.0
+ CUST000029 TCK0000024  2026-01-18            Content        Missing subtitles   Medium      Resolved                          3.0
+ CUST000030 TCK0000025  2025-04-08     Account Access            Login failure      Low        Closed                          5.0
+ CUST000031 TCK0000026  2024-12-04       Device & App         Download failure      Low      Resolved                          3.0
+ CUST000032 TCK0000027  2023-12-28     Account Access Email verification issue     High        Closed                          3.0
+ CUST000038 TCK0000028  2025-05-30  Streaming Quality             App crashing   Medium      Resolved                          4.0
+ CUST000039 TCK0000031  2025-04-04  Streaming Quality                Buffering      Low        Closed                          2.0
+ CUST000041 TCK0000032  2026-01-25 Billing & Payments           Refund request      Low      Resolved                          2.0
+ CUST000042 TCK0000033  2023-10-12  Streaming Quality         Audio sync issue      Low      Resolved                          3.0
+ CUST000045 TCK0000034  2023-04-05     Account Access Email verification issue      Low      Resolved                          3.0
+ CUST000047 TCK0000035  2025-06-06  Streaming Quality                Buffering      Low      Resolved                          4.0
+ CUST000048 TCK0000036  2026-02-07 Billing & Payments           Refund request   Medium      Resolved                          1.0
+ CUST000052 TCK0000037  2024-02-09  Streaming Quality         Audio sync issue     High      Resolved                          3.0
+ CUST000054 TCK0000038  2024-10-05     Account Access Email verification issue   Medium       Pending                          NaN
+ CUST000055 TCK0000039  2021-10-31  Streaming Quality           Low resolution Critical      Resolved                          3.0
+ CUST000057 TCK0000042  2024-11-26       Device & App          App not loading     High        Closed                          4.0
+ CUST000058 TCK0000047  2026-05-21 Billing & Payments           Refund request     High     Escalated                          NaN
+ CUST000061 TCK0000048  2025-11-02 Billing & Payments         Invoice question     High      Resolved                          5.0
+ CUST000063 TCK0000049  2024-11-17       Device & App     Device not supported   Medium        Closed                          3.0
+ CUST000066 TCK0000050  2025-08-27       Subscription     Cancellation request      Low      Resolved                          4.0
+ CUST000068 TCK0000051  2024-06-18 Billing & Payments           Refund request   Medium      Resolved                          4.0
+ CUST000069 TCK0000052  2024-10-05 Billing & Payments            Price dispute      Low        Closed                          5.0
+ CUST000070 TCK0000053  2026-04-03       Subscription     Auto-renew complaint     High      Resolved                          2.0
+ CUST000073 TCK0000054  2024-05-31     Account Access           Account locked      Low       Pending                          NaN
+ CUST000074 TCK0000056  2023-08-01       Device & App         Download failure      Low        Closed                          4.0
+ CUST000076 TCK0000058  2025-12-12  Streaming Quality           Low resolution     High     Escalated                          NaN
+ CUST000077 TCK0000059  2024-01-26  Streaming Quality                Buffering   Medium        Closed                          2.0
+ CUST000078 TCK0000060  2024-07-06 Billing & Payments            Price dispute   Medium      Resolved                          3.0
+ CUST000079 TCK0000061  2025-08-04       Subscription     Plan upgrade request      Low      Resolved                          5.0
+ CUST000080 TCK0000062  2025-07-04  Streaming Quality                Buffering   Medium        Closed                          3.0
+ CUST000081 TCK0000063  2023-10-14  Streaming Quality                Buffering      Low      Resolved                          4.0
+ CUST000082 TCK0000064  2026-01-20  Streaming Quality           Low resolution     High      Resolved                          3.0
+ CUST000086 TCK0000065  2026-03-19       Device & App      Sync across devices      Low      Resolved                          3.0
+ CUST000088 TCK0000066  2026-05-01       Subscription     Plan upgrade request   Medium      Resolved                          5.0
+ CUST000091 TCK0000068  2026-03-07       Subscription   Plan downgrade request   Medium      Resolved                          2.0
+ CUST000092 TCK0000069  2026-01-08  Streaming Quality         Audio sync issue   Medium      Resolved                          1.0
+ CUST000094 TCK0000070  2024-01-21     Account Access            Login failure      Low      Resolved                          5.0
+ CUST000096 TCK0000071  2023-11-06 Billing & Payments           Failed payment     High       Pending                          NaN
+ CUST000098 TCK0000073  2021-06-16 Billing & Payments         Invoice question     High        Closed                          1.0
+ CUST000101 TCK0000074  2026-06-05 Billing & Payments           Failed payment     High      Resolved                          2.0
+ CUST000103 TCK0000076  2026-03-12 Billing & Payments            Price dispute      Low     Escalated                          NaN
+ CUST000105 TCK0000077  2025-05-26       Subscription   Plan downgrade request   Medium      Resolved                          4.0
+ CUST000107 TCK0000078  2025-09-05       Subscription     Auto-renew complaint     High        Closed                          5.0
+ CUST000109 TCK0000079  2020-06-11 Billing & Payments            Price dispute   Medium      Resolved                          2.0
+ CUST000110 TCK0000080  2026-06-25     Account Access Email verification issue     High      Resolved                          3.0
+... (4408 rows total, first 60 shown)
+
+==============================================================================
+Q18  3-month moving average of new customer registrations
+==============================================================================
+signup_month  new_customers  moving_avg_3m  months_in_window
+     2019-01             91          91.00                 1
+     2019-02             82          86.50                 2
+     2019-03             86          86.33                 3
+     2019-04             71          79.67                 3
+     2019-05             98          85.00                 3
+     2019-06             77          82.00                 3
+     2019-07             90          88.33                 3
+     2019-08             80          82.33                 3
+     2019-09             91          87.00                 3
+     2019-10             90          87.00                 3
+     2019-11             93          91.33                 3
+     2019-12             99          94.00                 3
+     2020-01             96          96.00                 3
+     2020-02             84          93.00                 3
+     2020-03             88          89.33                 3
+     2020-04             85          85.67                 3
+     2020-05             83          85.33                 3
+     2020-06             82          83.33                 3
+     2020-07             92          85.67                 3
+     2020-08             90          88.00                 3
+     2020-09             81          87.67                 3
+     2020-10             87          86.00                 3
+     2020-11             92          86.67                 3
+     2020-12             81          86.67                 3
+     2021-01             93          88.67                 3
+     2021-02             91          88.33                 3
+     2021-03             93          92.33                 3
+     2021-04             90          91.33                 3
+     2021-05             96          93.00                 3
+     2021-06            111          99.00                 3
+     2021-07             78          95.00                 3
+     2021-08             72          87.00                 3
+     2021-09             89          79.67                 3
+     2021-10             91          84.00                 3
+     2021-11             88          89.33                 3
+     2021-12            102          93.67                 3
+     2022-01             98          96.00                 3
+     2022-02             80          93.33                 3
+     2022-03             96          91.33                 3
+     2022-04             95          90.33                 3
+     2022-05             91          94.00                 3
+     2022-06             90          92.00                 3
+     2022-07            101          94.00                 3
+     2022-08             84          91.67                 3
+     2022-09            108          97.67                 3
+     2022-10            105          99.00                 3
+     2022-11             88         100.33                 3
+     2022-12             88          93.67                 3
+     2023-01            102          92.67                 3
+     2023-02             76          88.67                 3
+     2023-03             90          89.33                 3
+     2023-04             78          81.33                 3
+     2023-05             97          88.33                 3
+     2023-06             83          86.00                 3
+     2023-07             82          87.33                 3
+     2023-08            104          89.67                 3
+     2023-09             93          93.00                 3
+     2023-10             80          92.33                 3
+     2023-11            105          92.67                 3
+     2023-12             97          94.00                 3
+... (89 rows total, first 60 shown)
+
+==============================================================================
+Q19  Month-over-month watch-time decline in the most recent month (LAG)
+==============================================================================
+customer_id latest_month  prev_watch_min  latest_watch_min  pct_change
+ CUST000001      2026-06           120.0               0.0      -100.0
+ CUST000002      2026-06            46.0               0.0      -100.0
+ CUST000006      2026-06            64.0               0.0      -100.0
+ CUST000009      2026-06           152.0               0.0      -100.0
+ CUST000017      2026-06           107.0               0.0      -100.0
+ CUST000024      2026-06            25.0               0.0      -100.0
+ CUST000029      2026-06            46.0               0.0      -100.0
+ CUST000032      2026-06            40.0               0.0      -100.0
+ CUST000040      2026-06            36.0               0.0      -100.0
+ CUST000048      2026-06            82.0               0.0      -100.0
+ CUST000052      2026-06             9.0               0.0      -100.0
+ CUST000055      2026-06            88.0               0.0      -100.0
+ CUST000060      2026-06            36.0               0.0      -100.0
+ CUST000063      2026-06            46.0               0.0      -100.0
+ CUST000067      2026-06           107.0               0.0      -100.0
+ CUST000076      2026-06            37.0               0.0      -100.0
+ CUST000094      2026-06           125.0               0.0      -100.0
+ CUST000096      2026-06            32.0               0.0      -100.0
+ CUST000098      2026-06            80.0               0.0      -100.0
+ CUST000101      2026-06           124.0               0.0      -100.0
+ CUST000105      2026-06            20.0               0.0      -100.0
+ CUST000115      2026-06            45.0               0.0      -100.0
+ CUST000132      2026-06            29.0               0.0      -100.0
+ CUST000141      2026-06            13.0               0.0      -100.0
+ CUST000144      2026-06             3.0               0.0      -100.0
+ CUST000147      2026-06            43.0               0.0      -100.0
+ CUST000152      2026-06            60.0               0.0      -100.0
+ CUST000153      2026-06            36.0               0.0      -100.0
+ CUST000160      2026-06           109.0               0.0      -100.0
+ CUST000161      2026-06            50.0               0.0      -100.0
+ CUST000162      2026-06           118.0               0.0      -100.0
+ CUST000163      2026-06            73.0               0.0      -100.0
+ CUST000167      2026-06            47.0               0.0      -100.0
+ CUST000168      2026-06           141.0               0.0      -100.0
+ CUST000175      2026-06            68.0               0.0      -100.0
+ CUST000179      2026-06            27.0               0.0      -100.0
+ CUST000180      2026-06            30.0               0.0      -100.0
+ CUST000189      2026-06            60.0               0.0      -100.0
+ CUST000190      2026-06           276.0               0.0      -100.0
+ CUST000197      2026-06            50.0               0.0      -100.0
+ CUST000201      2026-06            24.0               0.0      -100.0
+ CUST000216      2026-06            98.0               0.0      -100.0
+ CUST000217      2026-06            84.0               0.0      -100.0
+ CUST000220      2026-06           151.0               0.0      -100.0
+ CUST000228      2026-06            44.0               0.0      -100.0
+ CUST000232      2026-06           256.0               0.0      -100.0
+ CUST000235      2026-06            75.0               0.0      -100.0
+ CUST000239      2026-06            79.0               0.0      -100.0
+ CUST000240      2026-06            44.0               0.0      -100.0
+ CUST000243      2026-06            70.0               0.0      -100.0
+ CUST000246      2026-06            56.0               0.0      -100.0
+ CUST000255      2026-06           124.0               0.0      -100.0
+ CUST000262      2026-06            70.0               0.0      -100.0
+ CUST000279      2026-06           104.0               0.0      -100.0
+ CUST000286      2026-06            35.0               0.0      -100.0
+ CUST000289      2026-06            50.0               0.0      -100.0
+ CUST000300      2026-06           209.0               0.0      -100.0
+ CUST000302      2026-06            22.0               0.0      -100.0
+ CUST000316      2026-06            96.0               0.0      -100.0
+ CUST000318      2026-06            95.0               0.0      -100.0
+... (2908 rows total, first 60 shown)
+
+==============================================================================
+Q20  Registration-cohort retention at 1, 3 and 6 months
+==============================================================================
+cohort_month  cohort_size  retained_1m_pct  retained_3m_pct  retained_6m_pct
+     2019-01           91            100.0            100.0            100.0
+     2019-02           82            100.0            100.0            100.0
+     2019-03           86            100.0            100.0            100.0
+     2019-04           71            100.0            100.0            100.0
+     2019-05           98            100.0            100.0            100.0
+     2019-06           77            100.0            100.0            100.0
+     2019-07           90            100.0            100.0            100.0
+     2019-08           80            100.0            100.0            100.0
+     2019-09           91            100.0            100.0            100.0
+     2019-10           90            100.0            100.0            100.0
+     2019-11           93            100.0            100.0            100.0
+     2019-12           99            100.0            100.0            100.0
+     2020-01           96            100.0            100.0            100.0
+     2020-02           84            100.0            100.0            100.0
+     2020-03           88            100.0            100.0            100.0
+     2020-04           85            100.0            100.0            100.0
+     2020-05           83            100.0            100.0            100.0
+     2020-06           82            100.0            100.0            100.0
+     2020-07           92            100.0            100.0            100.0
+     2020-08           90            100.0            100.0            100.0
+     2020-09           81            100.0            100.0            100.0
+     2020-10           87            100.0            100.0            100.0
+     2020-11           92            100.0            100.0            100.0
+     2020-12           81            100.0            100.0            100.0
+     2021-01           93            100.0            100.0            100.0
+     2021-02           91            100.0            100.0            100.0
+     2021-03           93            100.0            100.0            100.0
+     2021-04           90            100.0            100.0            100.0
+     2021-05           96            100.0            100.0            100.0
+     2021-06          111            100.0            100.0            100.0
+     2021-07           78            100.0            100.0            100.0
+     2021-08           72            100.0            100.0            100.0
+     2021-09           89            100.0            100.0            100.0
+     2021-10           91            100.0            100.0            100.0
+     2021-11           88            100.0            100.0            100.0
+     2021-12          102            100.0            100.0            100.0
+     2022-01           98            100.0            100.0            100.0
+     2022-02           80            100.0            100.0            100.0
+     2022-03           96            100.0            100.0            100.0
+     2022-04           95            100.0            100.0            100.0
+     2022-05           91            100.0            100.0            100.0
+     2022-06           90            100.0            100.0            100.0
+     2022-07          101            100.0            100.0            100.0
+     2022-08           84            100.0            100.0            100.0
+     2022-09          108            100.0            100.0            100.0
+     2022-10          105            100.0            100.0            100.0
+     2022-11           88            100.0            100.0            100.0
+     2022-12           88            100.0            100.0            100.0
+     2023-01          102            100.0            100.0            100.0
+     2023-02           76            100.0            100.0            100.0
+     2023-03           90            100.0            100.0            100.0
+     2023-04           78            100.0            100.0            100.0
+     2023-05           97            100.0            100.0            100.0
+     2023-06           83            100.0            100.0            100.0
+     2023-07           82            100.0            100.0            100.0
+     2023-08          104            100.0            100.0            100.0
+     2023-09           93            100.0            100.0            100.0
+     2023-10           80            100.0            100.0            100.0
+     2023-11          105            100.0            100.0            100.0
+     2023-12           97            100.0            100.0            100.0
+... (89 rows total, first 60 shown)
+
+==============================================================================
+Q21  Top 5 countries by churn rate (DENSE_RANK)
+==============================================================================
+ churn_rank     country  customers  churned  churn_rate_pct
+          1 South Korea        215     63.0           29.30
+          2     Germany        401    112.0           27.93
+          3   Indonesia        249     67.0           26.91
+          4     Nigeria        228     61.0           26.75
+          5      France        329     86.0           26.14
+(5 rows)
+
+==============================================================================
+Q22  Running total of successful payments per customer
+==============================================================================
+customer_id  payment_id payment_date  amount  running_total
+ CUST000001 PAY00000001   2022-04-30   22.99          22.99
+ CUST000001 PAY00000002   2022-05-30   22.99          45.98
+ CUST000001 PAY00000003   2022-06-29   22.99          68.97
+ CUST000001 PAY00000004   2022-07-29   22.99          91.96
+ CUST000001 PAY00000005   2022-08-28   22.99         114.95
+ CUST000001 PAY00000006   2022-09-27   22.99         137.94
+ CUST000001 PAY00000007   2022-10-27   22.99         160.93
+ CUST000001 PAY00000008   2022-11-26   22.99         183.92
+ CUST000001 PAY00000009   2022-12-26   22.99         206.91
+ CUST000001 PAY00000010   2023-01-25   22.99         229.90
+ CUST000001 PAY00000011   2023-02-24   22.99         252.89
+ CUST000001 PAY00000012   2023-03-26   22.99         275.88
+ CUST000001 PAY00000013   2023-04-25   22.99         298.87
+ CUST000001 PAY00000014   2023-05-25   22.99         321.86
+ CUST000001 PAY00000015   2023-06-24   22.99         344.85
+ CUST000002 PAY00000016   2025-12-24   15.49          15.49
+ CUST000002 PAY00000017   2026-01-23   15.49          30.98
+ CUST000002 PAY00000018   2026-02-22   15.49          46.47
+ CUST000002 PAY00000019   2026-03-24   15.49          61.96
+ CUST000002 PAY00000020   2026-04-23   15.49          77.45
+ CUST000002 PAY00000021   2026-05-23   15.49          92.94
+ CUST000003 PAY00000022   2019-12-15   22.99          22.99
+ CUST000003 PAY00000023   2020-01-14   22.99          45.98
+ CUST000003 PAY00000024   2020-02-13   22.99          68.97
+ CUST000003 PAY00000025   2020-03-14   22.99          91.96
+ CUST000003 PAY00000026   2020-04-13   22.99         114.95
+ CUST000003 PAY00000027   2020-05-13   22.99         137.94
+ CUST000003 PAY00000028   2020-06-12   22.99         160.93
+ CUST000003 PAY00000029   2020-07-12   22.99         183.92
+ CUST000003 PAY00000030   2020-08-11   22.99         206.91
+ CUST000003 PAY00000031   2020-09-10   22.99         229.90
+ CUST000003 PAY00000032   2020-10-10   22.99         252.89
+ CUST000003 PAY00000033   2020-11-09   22.99         275.88
+ CUST000003 PAY00000034   2020-12-09   22.99         298.87
+ CUST000003 PAY00000035   2021-01-08   22.99         321.86
+ CUST000003 PAY00000036   2021-02-07   22.99         344.85
+ CUST000004 PAY00000037   2019-01-28    6.99           6.99
+ CUST000004 PAY00000038   2019-02-27    6.99          13.98
+ CUST000004 PAY00000039   2019-03-29    6.99          20.97
+ CUST000004 PAY00000040   2019-04-28    6.99          27.96
+ CUST000004 PAY00000041   2019-05-28    6.99          34.95
+ CUST000004 PAY00000042   2019-06-27    6.99          41.94
+ CUST000004 PAY00000043   2019-07-27    6.99          48.93
+ CUST000004 PAY00000045   2019-09-25    6.99          55.92
+ CUST000004 PAY00000046   2019-10-25    6.99          62.91
+ CUST000004 PAY00000047   2019-11-24    6.99          69.90
+ CUST000004 PAY00000048   2019-12-24    6.99          76.89
+ CUST000004 PAY00000049   2020-01-23    6.99          83.88
+ CUST000004 PAY00000050   2020-02-22    6.99          90.87
+ CUST000004 PAY00000051   2020-03-23    6.99          97.86
+ CUST000005 PAY00000052   2024-07-24    6.99           6.99
+ CUST000005 PAY00000053   2024-08-23    6.99          13.98
+ CUST000005 PAY00000054   2024-09-22    6.99          20.97
+ CUST000005 PAY00000055   2024-10-22    6.99          27.96
+ CUST000005 PAY00000056   2024-11-21    6.99          34.95
+ CUST000005 PAY00000058   2025-01-20    6.99          41.94
+ CUST000005 PAY00000059   2025-02-19    6.99          48.93
+ CUST000005 PAY00000060   2025-03-21    6.99          55.92
+ CUST000005 PAY00000061   2025-04-20    6.99          62.91
+ CUST000005 PAY00000062   2025-05-20    6.99          69.90
+... (103529 rows total, first 60 shown)
+
+==============================================================================
+Q23  Customers whose monthly watch time fell three months in a row (N < N-1 < N-2)
+==============================================================================
+customer_id latest_decline_ends  watch_two_months_before  watch_prior_month  watch_that_month  declining_windows
+ CUST000927             2026-06                     62.0               42.0               0.0                  5
+ CUST003106             2026-06                    110.0               59.0               0.0                  5
+ CUST004516             2026-03                     61.0               41.0               0.0                  5
+ CUST005078             2026-05                     38.0               29.0               0.0                  5
+ CUST005422             2026-04                     64.0               48.0               0.0                  5
+ CUST007065             2026-06                     69.0               60.0               0.0                  5
+ CUST000090             2026-05                     38.0               34.0               0.0                  4
+ CUST000157             2026-02                     21.0               17.0               0.0                  4
+ CUST000591             2026-05                     50.0               25.0               0.0                  4
+ CUST000746             2026-05                     89.0               46.0               0.0                  4
+ CUST000934             2026-04                     84.0               60.0               0.0                  4
+ CUST001314             2026-03                     54.0               30.0               0.0                  4
+ CUST001413             2026-05                     39.0               27.0               0.0                  4
+ CUST001537             2026-03                     86.0               60.0               0.0                  4
+ CUST001596             2026-03                     70.0                6.0               0.0                  4
+ CUST001664             2026-04                     59.0               57.0               0.0                  4
+ CUST001825             2026-04                     40.0               15.0               0.0                  4
+ CUST001859             2026-06                    102.0               64.0               0.0                  4
+ CUST001895             2026-06                     44.0               22.0               0.0                  4
+ CUST002281             2026-03                     15.0               14.0               0.0                  4
+ CUST002642             2026-04                     72.0               50.0               0.0                  4
+ CUST003105             2026-05                     82.0               36.0               0.0                  4
+ CUST003212             2026-02                     36.0               28.0               0.0                  4
+ CUST003457             2026-04                     71.0               45.0               0.0                  4
+ CUST003653             2026-05                     52.0               48.0              44.0                  4
+ CUST003677             2026-04                     61.0               57.0               0.0                  4
+ CUST003972             2025-12                      8.0                3.0               0.0                  4
+ CUST004021             2026-06                     72.0               33.0               0.0                  4
+ CUST004064             2026-05                    130.0               74.0               0.0                  4
+ CUST004120             2026-06                     68.0               37.0              30.0                  4
+ CUST004333             2026-06                    248.0               24.0               0.0                  4
+ CUST004337             2026-05                     87.0               45.0               0.0                  4
+ CUST004747             2026-04                    102.0               51.0               0.0                  4
+ CUST004996             2026-04                     19.0                3.0               0.0                  4
+ CUST005012             2026-03                     62.0                3.0               0.0                  4
+ CUST005237             2026-02                    115.0              107.0               0.0                  4
+ CUST005437             2026-06                     62.0                3.0               0.0                  4
+ CUST005614             2026-02                    116.0                9.0               0.0                  4
+ CUST005654             2026-04                     76.0               64.0              32.0                  4
+ CUST005827             2026-06                     69.0               53.0               0.0                  4
+ CUST005960             2026-03                     53.0               41.0               0.0                  4
+ CUST006099             2026-02                     48.0               30.0               0.0                  4
+ CUST006153             2026-05                     58.0               56.0               0.0                  4
+ CUST006172             2026-04                    103.0                3.0               0.0                  4
+ CUST006274             2026-06                     85.0               47.0               0.0                  4
+ CUST006620             2026-04                    143.0               51.0               0.0                  4
+ CUST006739             2026-06                     65.0               42.0              39.0                  4
+ CUST006884             2026-05                     74.0               53.0               0.0                  4
+ CUST007104             2026-04                     79.0                3.0               0.0                  4
+ CUST007239             2026-06                     82.0               65.0              52.0                  4
+ CUST007416             2026-04                     71.0               17.0               0.0                  4
+ CUST007566             2026-03                     83.0               74.0              31.0                  4
+ CUST000064             2026-06                    115.0               80.0              66.0                  3
+ CUST000123             2025-11                     32.0               27.0               0.0                  3
+ CUST000178             2026-03                     83.0               38.0               0.0                  3
+ CUST000186             2026-05                     86.0               24.0               0.0                  3
+ CUST000260             2026-04                     65.0               53.0               0.0                  3
+ CUST000286             2026-04                    110.0               59.0               0.0                  3
+ CUST000344             2026-06                     94.0               66.0              17.0                  3
+ CUST000346             2026-03                    143.0               58.0               0.0                  3
+... (3796 rows total, first 60 shown)
+
+==============================================================================
+Q24  Monthly churn rate, last 12 months
+==============================================================================
+churn_month  active_at_start  churned_in_month  churn_rate_pct
+    2025-07           7007.0               0.0            0.00
+    2025-08           7098.0               0.0            0.00
+    2025-09           7185.0               0.0            0.00
+    2025-10           7273.0             198.0            2.72
+    2025-11           7185.0             199.0            2.77
+    2025-12           7066.0             212.0            3.00
+    2026-01           6939.0             250.0            3.60
+    2026-02           6770.0             189.0            2.79
+    2026-03           6681.0             207.0            3.10
+    2026-04           6571.0             218.0            3.32
+    2026-05           6427.0             242.0            3.77
+    2026-06           6260.0             251.0            4.01
+(12 rows)
+
+==============================================================================
+Q25  Retention rate by acquisition channel (still active today)
+==============================================================================
+     acquisition_channel  customers_acquired  still_active  retention_rate_pct  retention_rank
+Partner Bundle (Telecom)                 640         489.0               76.41               1
+                Referral                1081         822.0               76.04               2
+               App Store                 990         750.0               75.76               3
+          Organic Search                1786        1341.0               75.08               4
+          Email Campaign                 785         588.0               74.90               5
+       Affiliate Partner                 793         593.0               74.78               6
+                  Direct                 498         369.0               74.10               7
+             Paid Social                1427        1057.0               74.07               8
+(8 rows)
+
+==============================================================================
+Q26  Lifetime spend per customer and spend quartile (NTILE; quartile 1 = highest spenders)
+==============================================================================
+customer_id  lifetime_spend  spend_quartile
+ CUST000001          344.85               1
+ CUST000003          344.85               1
+ CUST000031          344.85               1
+ CUST000054          344.85               1
+ CUST000069          344.85               1
+ CUST000071          344.85               1
+ CUST000085          344.85               1
+ CUST000127          344.85               1
+ CUST000130          344.85               1
+ CUST000140          344.85               1
+ CUST000145          344.85               1
+ CUST000178          344.85               1
+ CUST000186          344.85               1
+ CUST000191          344.85               1
+ CUST000193          344.85               1
+ CUST000195          344.85               1
+ CUST000196          344.85               1
+ CUST000213          344.85               1
+ CUST000217          344.85               1
+ CUST000218          344.85               1
+ CUST000231          344.85               1
+ CUST000237          344.85               1
+ CUST000250          344.85               1
+ CUST000251          344.85               1
+ CUST000270          344.85               1
+ CUST000276          344.85               1
+ CUST000280          344.85               1
+ CUST000284          344.85               1
+ CUST000308          344.85               1
+ CUST000326          344.85               1
+ CUST000346          344.85               1
+ CUST000355          344.85               1
+ CUST000382          344.85               1
+ CUST000384          344.85               1
+ CUST000395          344.85               1
+ CUST000413          344.85               1
+ CUST000423          344.85               1
+ CUST000443          344.85               1
+ CUST000444          344.85               1
+ CUST000450          344.85               1
+ CUST000500          344.85               1
+ CUST000519          344.85               1
+ CUST000567          344.85               1
+ CUST000578          344.85               1
+ CUST000581          344.85               1
+ CUST000585          344.85               1
+ CUST000595          344.85               1
+ CUST000597          344.85               1
+ CUST000617          344.85               1
+ CUST000627          344.85               1
+ CUST000640          344.85               1
+ CUST000644          344.85               1
+ CUST000668          344.85               1
+ CUST000675          344.85               1
+ CUST000687          344.85               1
+ CUST000697          344.85               1
+ CUST000707          344.85               1
+ CUST000729          344.85               1
+ CUST000730          344.85               1
+ CUST000735          344.85               1
+... (8000 rows total, first 60 shown)
+
+==============================================================================
+Q26b  Quartile summary: how concentrated is revenue?
+==============================================================================
+ spend_quartile  customers  min_spend  max_spend  avg_spend  pct_of_total_spend
+              1       2000     232.35     344.85     297.89               42.67
+              2       2000     185.88     232.35     216.48               31.01
+              3       2000      97.86     185.88     109.83               15.73
+              4       2000       0.00      97.86      73.99               10.60
+(4 rows)
+
+==============================================================================
+Q27  Top 3 issue subcategories by ticket volume, per country
+==============================================================================
+             country  subcategory_rank        issue_subcategory  tickets
+           Argentina                 1         Invoice question       11
+           Argentina                 2           Failed payment        9
+           Argentina                 3           Low resolution        9
+           Australia                 1             App crashing       14
+           Australia                 2         Invoice question       14
+           Australia                 3         Audio sync issue       10
+              Brazil                 1                Buffering       21
+              Brazil                 2           Refund request       19
+              Brazil                 3            Login failure       18
+              Canada                 1         Invoice question       23
+              Canada                 2             App crashing       21
+              Canada                 3         Audio sync issue       21
+              France                 1           Failed payment       18
+              France                 2           Refund request       18
+              France                 3             App crashing       15
+             Germany                 1         Audio sync issue       26
+             Germany                 2     Cancellation request       22
+             Germany                 3           Refund request       22
+               India                 1         Invoice question       69
+               India                 2           Failed payment       58
+               India                 3           Refund request       58
+           Indonesia                 1             App crashing       13
+           Indonesia                 2     Auto-renew complaint       13
+           Indonesia                 3 Email verification issue       13
+               Italy                 1           Failed payment       14
+               Italy                 2         Invoice question       12
+               Italy                 3             App crashing       10
+               Japan                 1         Invoice question       22
+               Japan                 2           Failed payment       16
+               Japan                 3           Account locked       12
+              Mexico                 1           Failed payment       19
+              Mexico                 2                Buffering       17
+              Mexico                 3            Price dispute       15
+             Nigeria                 1                Buffering       15
+             Nigeria                 2         Invoice question       15
+             Nigeria                 3         Duplicate charge       13
+         Philippines                 1         Duplicate charge       16
+         Philippines                 2         Invoice question       16
+         Philippines                 3            Price dispute       14
+              Poland                 1         Duplicate charge       16
+              Poland                 2            Price dispute       10
+              Poland                 3           Refund request        8
+        South Africa                 1         Audio sync issue       14
+        South Africa                 2         Invoice question       13
+        South Africa                 3           Refund request       11
+         South Korea                 1            Price dispute       12
+         South Korea                 2     Cancellation request       11
+         South Korea                 3     Device not supported       11
+               Spain                 1           Failed payment       13
+               Spain                 2             App crashing       10
+               Spain                 3         Duplicate charge       10
+United Arab Emirates                 1         Invoice question       12
+United Arab Emirates                 2            Price dispute        9
+United Arab Emirates                 3             App crashing        8
+      United Kingdom                 1                Buffering       33
+      United Kingdom                 2         Duplicate charge       33
+      United Kingdom                 3           Failed payment       30
+       United States                 1           Refund request       81
+       United States                 2                Buffering       77
+       United States                 3         Audio sync issue       69
+(60 rows)
