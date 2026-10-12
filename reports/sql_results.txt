@@ -127,8 +127,8 @@ Q07  Average completion % by content type and genre
            Movie         Reality               70.22      1758
            Movie         Mystery               69.99      1450
            Movie          Sports               69.95      1827
-           Movie           Drama               69.87       934
            Movie           Anime               69.87      2878
+           Movie           Drama               69.87       934
            Movie Stand-Up Comedy               69.83      1148
 Stand-Up Special          Sports               73.32       101
 Stand-Up Special           Anime               71.76       249
@@ -265,8 +265,8 @@ Q13  New customers per acquisition channel per calendar year
         2024              Paid Social        182
         2024                 Referral        155
         2024                App Store        149
-        2024           Email Campaign        112
         2024        Affiliate Partner        112
+        2024           Email Campaign        112
         2024 Partner Bundle (Telecom)         93
         2024                   Direct         65
         2025           Organic Search        229
@@ -945,3 +945,417 @@ United Arab Emirates                 3             App crashing        8
        United States                 2                Buffering       77
        United States                 3         Audio sync issue       69
 (60 rows)
+
+==============================================================================
+Q28  Active customers with 2+ failed payments in the last 90 days AND high churn risk
+==============================================================================
+customer_id  failed_payment_count current_plan  churn_risk_score
+ CUST005057                     2      Premium            0.2416
+ CUST002514                     2        Basic            0.2186
+ CUST004108                     2     Standard            0.2032
+ CUST000439                     2        Basic            0.1949
+ CUST000662                     2        Basic            0.1337
+(5 rows)
+
+==============================================================================
+Q29  Engagement 30 days before vs 30 days after each customer's most recent price change
+==============================================================================
+customer_id change_date from_plan  to_plan direction  avg_min_per_session_before  avg_min_per_session_after  pct_change
+ CUST002083  2025-11-01   Premium Standard Downgrade                        40.0                        3.0       -92.5
+ CUST007322  2026-01-16  Standard    Basic Downgrade                        79.0                       14.0       -82.3
+ CUST002841  2026-05-04     Basic Standard   Upgrade                        79.0                       15.0       -81.0
+ CUST001316  2026-05-20   Premium Standard Downgrade                        49.0                       12.0       -75.5
+ CUST003897  2026-05-29   Premium Standard Downgrade                        63.5                       27.7       -56.4
+ CUST006628  2026-01-27     Basic  Premium   Upgrade                        52.0                       25.0       -51.9
+ CUST003985  2026-03-11   Premium    Basic Downgrade                        56.0                       32.0       -42.9
+ CUST005438  2026-01-28  Standard    Basic Downgrade                        70.0                       40.0       -42.9
+ CUST001686  2025-12-09     Basic  Premium   Upgrade                        60.0                       35.0       -41.7
+ CUST004878  2025-12-23     Basic  Premium   Upgrade                        45.0                       29.0       -35.6
+ CUST004285  2026-05-19   Premium Standard Downgrade                        57.0                       39.3       -31.0
+ CUST001863  2026-02-21     Basic Standard   Upgrade                        60.0                       41.7       -30.6
+ CUST003939  2026-01-18  Standard    Basic Downgrade                        36.0                       28.0       -22.2
+ CUST000064  2026-05-23  Standard    Basic Downgrade                        80.0                       66.0       -17.5
+ CUST003693  2026-03-12     Basic Standard   Upgrade                        54.0                       45.0       -16.7
+ CUST002987  2025-12-18  Standard    Basic Downgrade                        53.5                       47.0       -12.1
+ CUST002272  2026-04-21     Basic  Premium   Upgrade                        60.0                       54.0       -10.0
+ CUST002027  2026-01-28   Premium    Basic Downgrade                        33.0                       30.0        -9.1
+ CUST000934  2025-09-03     Basic Standard   Upgrade                        47.5                       49.0         3.2
+ CUST004470  2026-01-29  Standard    Basic Downgrade                        47.0                       49.0         4.3
+ CUST005446  2026-01-24  Standard    Basic Downgrade                        73.0                       80.0         9.6
+ CUST004060  2026-01-29     Basic  Premium   Upgrade                        38.0                       43.0        13.2
+ CUST007010  2026-02-20  Standard    Basic Downgrade                        38.0                       43.0        13.2
+ CUST001297  2025-10-30  Standard    Basic Downgrade                        47.5                       55.0        15.8
+ CUST001712  2025-09-25  Standard    Basic Downgrade                        47.0                       57.5        22.3
+ CUST005279  2026-02-02  Standard    Basic Downgrade                        55.3                       68.0        22.9
+ CUST000670  2026-01-03   Premium    Basic Downgrade                        47.0                       59.3        26.2
+ CUST000880  2026-01-16  Standard  Premium   Upgrade                        46.0                       60.0        30.4
+ CUST000935  2026-02-24     Basic Standard   Upgrade                        55.5                       75.5        36.0
+ CUST004754  2026-03-16  Standard    Basic Downgrade                        29.0                       39.5        36.2
+ CUST007145  2026-05-26  Standard    Basic Downgrade                        29.5                       44.7        51.4
+ CUST005368  2025-10-15   Premium    Basic Downgrade                        39.7                       64.0        61.3
+ CUST002883  2026-05-07  Standard    Basic Downgrade                        36.0                       65.5        81.9
+ CUST005529  2025-11-26  Standard    Basic Downgrade                        39.0                       72.0        84.6
+ CUST005658  2025-11-02   Premium Standard Downgrade                        36.0                       71.0        97.2
+ CUST006269  2026-03-07   Premium    Basic Downgrade                        26.3                       66.0       150.6
+ CUST000113  2026-04-18   Premium    Basic Downgrade                        30.0                       77.0       156.7
+ CUST006321  2025-11-29  Standard    Basic Downgrade                        23.0                       61.0       165.2
+ CUST005296  2026-03-13     Basic Standard   Upgrade                        53.0                      164.5       210.4
+ CUST000931  2025-12-22   Premium Standard Downgrade                        16.0                       64.0       300.0
+(40 rows)
+
+==============================================================================
+Q29b  Summary of Q29: overall and by direction
+==============================================================================
+  direction  customers  avg_before  avg_after  pct_change_of_averages  avg_of_customer_pct_changes
+  Downgrade         28        45.6       49.1                     7.8                         29.1
+    Upgrade         12        54.2       53.1                    -2.1                          2.1
+All changes         40        48.2       50.3                     4.5                         21.0
+(3 rows)
+
+==============================================================================
+Q30  Country scorecard: customers, churn, churn rate, avg lifetime value of churned customers,
+==============================================================================
+             country  total_customers  churned_customers  churn_rate_pct  avg_clv_of_churned           top_churn_reason  top_reason_count
+         South Korea              215               63.0           29.30              171.73           No longer needed                11
+             Germany              401              112.0           27.93              149.04              Too expensive                21
+           Indonesia              249               67.0           26.91              141.09              Too expensive                17
+             Nigeria              228               61.0           26.75              167.94 Found alternative platform                12
+              France              329               86.0           26.14              169.64              Too expensive                17
+               India             1322              338.0           25.57              159.37              Too expensive                63
+               Japan              291               74.0           25.43              175.83              Too expensive                12
+       United States             1520              386.0           25.39              162.20              Too expensive                79
+              Canada              433              107.0           24.71              174.31              Too expensive                21
+         Philippines              247               61.0           24.70              154.08              Too expensive                14
+               Spain              219               54.0           24.66              168.86 Found alternative platform                10
+      United Kingdom              649              160.0           24.65              166.27              Too expensive                28
+           Argentina              174               42.0           24.14              187.71              Too expensive                 9
+United Arab Emirates              171               40.0           23.39              174.35 Found alternative platform                11
+           Australia              212               49.0           23.11              196.97           No longer needed                 8
+              Brazil              397               89.0           22.42              169.03              Too expensive                15
+               Italy              231               51.0           22.08              146.22 Found alternative platform                 9
+        South Africa              228               49.0           21.49              162.48           No longer needed                 7
+              Mexico              313               67.0           21.41              177.79 Found alternative platform                13
+              Poland              171               35.0           20.47              163.35 Found alternative platform                 8
+(20 rows)
+
+==============================================================================
+Q31  At-risk revenue: composite churn-risk score x monthly price, top 50 active customers
+==============================================================================
+customer_id plan_name  monthly_price  days_since_last_activity  failed_payment_rate  support_ticket_count  churn_risk_score  at_risk_revenue  at_risk_rank
+ CUST005364   Premium          22.99                     167.0                0.267                   4.0            0.4319             9.93             1
+ CUST003950   Premium          22.99                     354.0                0.133                   1.0            0.4154             9.55             2
+ CUST005845   Premium          22.99                     365.0                0.071                   1.0            0.4048             9.31             3
+ CUST002668   Premium          22.99                     365.0                0.000                   1.0            0.3810             8.76             4
+ CUST005992   Premium          22.99                     365.0                0.000                   1.0            0.3810             8.76             4
+ CUST006617   Premium          22.99                     365.0                0.000                   1.0            0.3810             8.76             4
+ CUST000801   Premium          22.99                     286.0                0.067                   2.0            0.3786             8.71             7
+ CUST003753   Premium          22.99                     122.0                0.067                   5.0            0.3717             8.55             8
+ CUST004295   Premium          22.99                     350.0                0.133                   0.0            0.3641             8.37             9
+ CUST006781   Premium          22.99                     365.0                0.067                   0.0            0.3556             8.17            10
+ CUST006984   Premium          22.99                     283.0                0.000                   2.0            0.3537             8.13            11
+ CUST001175   Premium          22.99                     128.0                0.267                   3.0            0.3486             8.02            12
+ CUST001487   Premium          22.99                     271.0                0.000                   2.0            0.3427             7.88            13
+ CUST004092   Premium          22.99                     349.0                0.067                   0.0            0.3409             7.84            14
+ CUST005286   Premium          22.99                     125.0                0.067                   4.0            0.3269             7.51            15
+ CUST004043   Premium          22.99                      71.0                0.071                   5.0            0.3267             7.51            16
+ CUST006215   Premium          22.99                     332.0                0.067                   0.0            0.3254             7.48            17
+ CUST007410   Premium          22.99                      46.0                0.133                   5.0            0.3245             7.46            18
+ CUST000718   Premium          22.99                     100.0                0.267                   3.0            0.3231             7.43            19
+ CUST004986  Standard          15.49                     111.0                0.133                   7.0            0.4791             7.42            20
+ CUST000250   Premium          22.99                     246.0                0.000                   2.0            0.3199             7.35            21
+ CUST006493  Standard          15.49                     250.0                0.133                   4.0            0.4632             7.18            22
+ CUST001660   Premium          22.99                     288.0                0.000                   1.0            0.3106             7.14            23
+ CUST007313   Premium          22.99                     339.0                0.000                   0.0            0.3096             7.12            24
+ CUST004445   Premium          22.99                     261.0                0.067                   1.0            0.3082             7.09            25
+ CUST001458   Premium          22.99                     281.0                0.000                   1.0            0.3042             6.99            26
+ CUST002939   Premium          22.99                     173.0                0.133                   2.0            0.2977             6.84            27
+ CUST002561   Premium          22.99                     197.0                0.067                   2.0            0.2974             6.84            28
+ CUST002122  Standard          15.49                       7.0                1.000                   2.0            0.4350             6.74            29
+ CUST006155  Standard          15.49                     246.0                0.200                   3.0            0.4342             6.73            30
+ CUST002355   Premium          22.99                     266.0                0.000                   1.0            0.2905             6.68            31
+ CUST006145  Standard          15.49                     336.0                0.067                   2.0            0.4243             6.57            32
+ CUST002723   Premium          22.99                       6.0                0.267                   4.0            0.2848             6.55            33
+ CUST000298   Premium          22.99                     210.0                0.133                   1.0            0.2838             6.53            34
+ CUST006864   Premium          22.99                     258.0                0.000                   1.0            0.2832             6.51            35
+ CUST005500  Standard          15.49                     152.0                0.267                   4.0            0.4182             6.48            36
+ CUST002752   Premium          22.99                     178.0                0.067                   2.0            0.2800             6.44            37
+ CUST003629  Standard          15.49                     295.0                0.000                   3.0            0.4123             6.39            38
+ CUST000986   Premium          22.99                     125.0                0.200                   2.0            0.2761             6.35            39
+ CUST002865   Premium          22.99                     225.0                0.067                   1.0            0.2753             6.33            40
+ CUST000339   Premium          22.99                     123.0                0.200                   2.0            0.2742             6.30            41
+ CUST006069   Premium          22.99                     142.0                0.000                   3.0            0.2725             6.27            42
+ CUST000827   Premium          22.99                     141.0                0.000                   3.0            0.2716             6.24            43
+ CUST001531   Premium          22.99                      36.0                0.000                   5.0            0.2710             6.23            44
+ CUST004736   Premium          22.99                     244.0                0.000                   1.0            0.2705             6.22            45
+ CUST006208   Premium          22.99                      90.0                0.133                   3.0            0.2695             6.20            46
+ CUST002938   Premium          22.99                      87.0                0.133                   3.0            0.2668             6.13            47
+ CUST001100  Standard          15.49                     360.0                0.200                   0.0            0.3954             6.13            48
+ CUST005405   Premium          22.99                      86.0                0.133                   3.0            0.2658             6.11            49
+ CUST000982   Premium          22.99                      82.0                0.000                   4.0            0.2654             6.10            50
+(50 rows)
+
+==============================================================================
+Q32  Top 5 complaint subcategories per country in the most recent COMPLETED quarter,
+==============================================================================
+  country  complaint_rank             issue_subcategory  tickets  avg_resolution_hours  avg_csat quarter_start
+Argentina               1                Failed payment        4                  28.8      2.67    2026-04-01
+Argentina               2                Low resolution        3                  19.5      3.33    2026-04-01
+Argentina               3                  App crashing        1                  22.7      3.00    2026-04-01
+Argentina               4              Audio sync issue        1                   5.8      4.00    2026-04-01
+Argentina               5 Content unavailable in region        1                   NaN       NaN    2026-04-01
+Australia               1                  App crashing        3                  25.0      4.00    2026-04-01
+Australia               2               App not loading        2                  26.3      4.00    2026-04-01
+Australia               3                Password reset        2                   1.2      3.00    2026-04-01
+Australia               4                Account locked        1                  18.5      2.00    2026-04-01
+Australia               5          Auto-renew complaint        1                  67.4      4.00    2026-04-01
+   Brazil               1                     Buffering        6                  24.4      2.80    2026-04-01
+   Brazil               2      Email verification issue        4                  17.3      4.33    2026-04-01
+   Brazil               3          Auto-renew complaint        3                  42.1      3.00    2026-04-01
+   Brazil               4 Content unavailable in region        3                  12.4      4.50    2026-04-01
+   Brazil               5                Failed payment        3                  37.4      1.50    2026-04-01
+   Canada               1                Account locked        4                  12.5      2.50    2026-04-01
+   Canada               2           Sync across devices        4                  21.0      4.33    2026-04-01
+   Canada               3          Auto-renew complaint        3                  21.9      4.00    2026-04-01
+   Canada               4      Email verification issue        3                   9.2      3.50    2026-04-01
+   Canada               5                Failed payment        3                  37.9      3.00    2026-04-01
+   France               1                  App crashing        4                  11.7      2.75    2026-04-01
+   France               2                Failed payment        4                   6.2      3.33    2026-04-01
+   France               3                 Login failure        3                   8.5      2.00    2026-04-01
+   France               4                     Buffering        2                   2.8      2.00    2026-04-01
+   France               5              Download failure        2                  15.5      5.00    2026-04-01
+  Germany               1                     Buffering        6                  30.3      3.00    2026-04-01
+  Germany               2                Refund request        6                  46.5      2.00    2026-04-01
+  Germany               3              Audio sync issue        5                  14.8      2.33    2026-04-01
+  Germany               4                Low resolution        5                  18.9      3.33    2026-04-01
+  Germany               5               Content removed        3                  15.9      3.00    2026-04-01
+    India               1                     Buffering       19                  18.4      2.88    2026-04-01
+    India               2                Refund request       11                  22.5      3.22    2026-04-01
+    India               3           Sync across devices       10                  17.3      3.78    2026-04-01
+    India               4                Failed payment        9                  15.4      2.60    2026-04-01
+    India               5                Account locked        8                  11.7      3.14    2026-04-01
+Indonesia               1                  App crashing        3                   1.9      3.50    2026-04-01
+Indonesia               2                     Buffering        3                  11.3      2.67    2026-04-01
+Indonesia               3                Low resolution        3                  22.8      3.00    2026-04-01
+Indonesia               4               App not loading        2                  41.5      3.50    2026-04-01
+Indonesia               5              Audio sync issue        2                   1.0      2.50    2026-04-01
+    Italy               1 Content unavailable in region        4                  12.7      3.33    2026-04-01
+    Italy               2              Invoice question        4                  15.7      3.67    2026-04-01
+    Italy               3                  App crashing        3                  18.6      2.67    2026-04-01
+    Italy               4              Audio sync issue        2                  16.9      3.00    2026-04-01
+    Italy               5          Cancellation request        2                  24.7      5.00    2026-04-01
+    Japan               1          Cancellation request        2                   NaN       NaN    2026-04-01
+    Japan               2              Invoice question        2                   0.5      3.00    2026-04-01
+    Japan               3                 Price dispute        2                  26.7      4.00    2026-04-01
+    Japan               4                Account locked        1                   NaN       NaN    2026-04-01
+    Japan               5              Audio sync issue        1                   0.7      3.00    2026-04-01
+   Mexico               1                     Buffering        3                  15.8      3.33    2026-04-01
+   Mexico               2              Invoice question        3                   5.6      5.00    2026-04-01
+   Mexico               3          Cancellation request        2                   7.2      2.50    2026-04-01
+   Mexico               4               App not loading        1                  16.4      4.00    2026-04-01
+   Mexico               5              Audio sync issue        1                  23.9      2.00    2026-04-01
+  Nigeria               1                Low resolution        5                  39.1      3.00    2026-04-01
+  Nigeria               2                Failed payment        3                  15.1      3.00    2026-04-01
+  Nigeria               3                 Login failure        3                   8.6      3.00    2026-04-01
+  Nigeria               4               App not loading        2                   NaN       NaN    2026-04-01
+  Nigeria               5              Audio sync issue        2                  11.0      4.00    2026-04-01
+... (100 rows total, first 60 shown)
+
+==============================================================================
+Q33  Win-back candidates: churned customers in the top quartile of lifetime value
+==============================================================================
+customer_id              country last_plan  lifetime_value churn_date                     churn_reason  watch_minutes_last_30d last_engagement_level last_viewing_date
+ CUST000003              Germany   Premium          344.85 2026-04-20                    Too expensive                     0.0              Inactive        2026-02-12
+ CUST000191            Argentina   Premium          344.85 2026-06-28                 No longer needed                    21.0                   Low        2026-06-06
+ CUST000382               Canada   Premium          344.85 2025-11-15                 No longer needed                   116.0                  High        2025-10-30
+ CUST000384        United States   Premium          344.85 2026-01-04               Not enough content                     0.0              Inactive        2025-09-28
+ CUST000707                India   Premium          344.85 2026-05-18            Household budget cuts                    65.0                Medium        2026-05-13
+ CUST000735                Spain   Premium          344.85 2025-12-14          Content quality decline                     0.0              Inactive        2025-09-30
+ CUST000758               Canada   Premium          344.85 2026-06-02                 Technical issues                    53.0                Medium        2026-05-08
+ CUST000780               France   Premium          344.85 2025-11-25                    Too expensive                     0.0              Inactive        2025-08-05
+ CUST000866        United States   Premium          344.85 2026-01-26                    Too expensive                   214.0                  High        2026-01-16
+ CUST000921 United Arab Emirates   Premium          344.85 2026-01-09 Poor customer service experience                     0.0              Inactive        2025-11-16
+ CUST000976            Australia   Premium          344.85 2026-05-30                   Payment issues                     0.0              Inactive        2026-04-17
+ CUST001014                India   Premium          344.85 2026-04-16               Not enough content                     0.0              Inactive        2025-09-01
+ CUST001078                India   Premium          344.85 2025-11-30       Found alternative platform                    62.0                Medium        2025-11-30
+ CUST001421          South Korea   Premium          344.85 2026-06-01            Household budget cuts                     0.0              Inactive        2025-11-08
+ CUST001506                Japan   Premium          344.85 2025-12-22                 No longer needed                     0.0              Inactive        2025-10-29
+ CUST001561          South Korea   Premium          344.85 2025-12-07                 Technical issues                     0.0              Inactive        2025-09-18
+ CUST001657                India   Premium          344.85 2026-02-25                   Payment issues                    90.0                  High        2026-02-23
+ CUST001734        United States   Premium          344.85 2026-05-24 Poor customer service experience                     0.0              Inactive        2026-03-27
+ CUST001877                India   Premium          344.85 2026-04-07          Content quality decline                     0.0              Inactive        2026-02-21
+ CUST001886                Spain   Premium          344.85 2026-04-19                    Too expensive                     0.0              Inactive        2026-03-06
+ CUST002059              Germany   Premium          344.85 2025-12-18       Found alternative platform                     0.0              Inactive              None
+ CUST002101       United Kingdom   Premium          344.85 2025-12-23               Not enough content                    71.0                Medium        2025-11-26
+ CUST002119       United Kingdom   Premium          344.85 2026-02-02            Household budget cuts                     0.0              Inactive        2025-12-07
+ CUST002185        United States   Premium          344.85 2026-04-04               Not enough content                     0.0              Inactive        2026-02-09
+ CUST002209       United Kingdom   Premium          344.85 2025-10-20                 No longer needed                     0.0              Inactive              None
+ CUST002359                India   Premium          344.85 2026-04-25               Not enough content                     0.0              Inactive        2025-10-22
+ CUST002527        United States   Premium          344.85 2026-02-09               Not enough content                    37.0                   Low        2026-01-22
+ CUST002555               Canada   Premium          344.85 2026-05-30               Not enough content                     0.0              Inactive        2026-04-11
+ CUST002674                India   Premium          344.85 2026-03-14              Moving / relocation                   160.0                  High        2026-03-09
+ CUST002713          South Korea   Premium          344.85 2025-10-11                 No longer needed                    93.0                  High        2025-09-14
+ CUST002720        United States   Premium          344.85 2026-01-05       Found alternative platform                   128.0                  High        2025-12-21
+ CUST002770          South Korea   Premium          344.85 2026-03-25               Not enough content                    40.0                   Low        2026-03-17
+ CUST002941               France   Premium          344.85 2025-10-29               Not enough content                     0.0              Inactive        2025-08-11
+ CUST002943        United States   Premium          344.85 2026-01-05       Found alternative platform                   106.0                  High        2025-12-28
+ CUST002962                India   Premium          344.85 2026-04-29            Household budget cuts                    95.0                  High        2026-04-20
+ CUST003062              Nigeria   Premium          344.85 2025-11-30       Found alternative platform                     0.0              Inactive              None
+ CUST003083                India   Premium          344.85 2025-10-03            Household budget cuts                    27.0                   Low        2025-09-11
+ CUST003117        United States   Premium          344.85 2026-05-14 Poor customer service experience                     0.0              Inactive        2026-04-06
+ CUST003190       United Kingdom   Premium          344.85 2026-01-21                    Too expensive                   187.0                  High        2025-12-26
+ CUST003285                India   Premium          344.85 2026-04-25                    Too expensive                     0.0              Inactive        2025-11-20
+ CUST003404              Nigeria   Premium          344.85 2025-11-29       Found alternative platform                    77.0                Medium        2025-11-20
+ CUST003589                India   Premium          344.85 2025-11-03       Found alternative platform                    69.0                Medium        2025-10-16
+ CUST003633                Japan   Premium          344.85 2026-04-11                 Technical issues                     0.0              Inactive        2025-11-07
+ CUST003933        United States   Premium          344.85 2025-11-30                 No longer needed                    86.0                Medium        2025-11-29
+ CUST003956               Canada   Premium          344.85 2025-10-27          Content quality decline                     0.0              Inactive        2025-09-23
+ CUST003987               Brazil   Premium          344.85 2025-10-21               Not enough content                    56.0                Medium        2025-10-13
+ CUST004035        United States   Premium          344.85 2025-10-31       Found alternative platform                     0.0              Inactive        2025-09-17
+ CUST004040               France   Premium          344.85 2026-04-29                 No longer needed                     0.0              Inactive        2026-01-23
+ CUST004041               France   Premium          344.85 2025-10-16       Found alternative platform                     0.0              Inactive              None
+ CUST004189        United States   Premium          344.85 2025-11-11       Found alternative platform                    50.0                Medium        2025-10-22
+ CUST004201            Argentina   Premium          344.85 2026-05-27            Household budget cuts                    62.0                Medium        2026-05-17
+ CUST004272                India   Premium          344.85 2026-01-27                   Payment issues                     0.0              Inactive              None
+ CUST004300            Argentina   Premium          344.85 2025-10-12                    Too expensive                   122.0                  High        2025-09-29
+ CUST004351               Poland   Premium          344.85 2026-03-10       Found alternative platform                     0.0              Inactive        2025-09-28
+ CUST004372                India   Premium          344.85 2026-02-19          Content quality decline                     0.0              Inactive        2026-01-19
+ CUST004639               Brazil   Premium          344.85 2025-10-30                 Technical issues                    66.0                Medium        2025-10-24
+ CUST004666            Australia   Premium          344.85 2025-11-13                 No longer needed                     0.0              Inactive              None
+ CUST004733                India   Premium          344.85 2026-02-14 Poor customer service experience                     0.0              Inactive        2025-11-17
+ CUST004747       United Kingdom   Premium          344.85 2026-03-14                   Payment issues                    77.0                Medium        2026-02-24
+ CUST004896         South Africa   Premium          344.85 2025-11-17       Password sharing crackdown                     0.0              Inactive              None
+... (498 rows total, first 60 shown)
+
+==============================================================================
+Q34  Plan migration paths (customers with more than one subscription row)
+==============================================================================
+from_plan  to_plan migration_type  customers  pct_of_migrations  popularity_rank
+ Standard    Basic      Downgrade        119              20.88                1
+  Premium    Basic      Downgrade        114              20.00                2
+  Premium Standard      Downgrade        106              18.60                3
+    Basic Standard        Upgrade        101              17.72                4
+    Basic  Premium        Upgrade         74              12.98                5
+ Standard  Premium        Upgrade         56               9.82                6
+(6 rows)
+
+==============================================================================
+Q34b  Do upgraders churn differently from downgraders? (latest migration per customer)
+==============================================================================
+migration_type  customers  churned  churn_rate_pct
+     Same plan        305     85.0           27.87
+       Upgrade        231     64.0           27.71
+     Downgrade        339     90.0           26.55
+No plan change       7125   1752.0           24.59
+(4 rows)
+
+==============================================================================
+Q35  WAU, MAU and stickiness (WAU / MAU) for the last 6 months
+==============================================================================
+activity_month    wau  mau  stickiness_wau_mau  weeks_counted
+       2026-01 1102.5 3672               0.300              4
+       2026-02 1147.5 3513               0.327              4
+       2026-03  901.0 3210               0.281              5
+       2026-04 1005.5 3191               0.315              4
+       2026-05 1622.8 4302               0.377              4
+       2026-06 1643.8 4235               0.388              4
+(6 rows)
+
+==============================================================================
+Q36  Retention-outreach list: ACTIVE customers who left negative feedback within 14 days
+==============================================================================
+customer_id  negative_feedbacks  near_failed_payment  near_low_csat_ticket  closest_days
+ CUST003181                   2                  2.0                   0.0             3
+ CUST005732                   2                  0.0                   2.0             6
+ CUST002757                   1                  1.0                   0.0             0
+ CUST001903                   1                  0.0                   1.0             2
+ CUST006180                   1                  1.0                   0.0             2
+ CUST001105                   1                  1.0                   0.0             3
+ CUST001959                   1                  1.0                   0.0             3
+ CUST006467                   1                  1.0                   0.0             3
+ CUST007854                   1                  1.0                   0.0             3
+ CUST004612                   1                  1.0                   0.0             5
+ CUST001764                   1                  1.0                   0.0             6
+ CUST005629                   1                  1.0                   0.0             6
+ CUST007627                   1                  1.0                   0.0             6
+ CUST001146                   1                  1.0                   0.0             7
+ CUST004937                   1                  0.0                   1.0             7
+ CUST005682                   1                  1.0                   0.0             7
+ CUST006254                   1                  1.0                   0.0             7
+ CUST006594                   1                  1.0                   0.0             7
+ CUST003504                   1                  1.0                   0.0             8
+ CUST007920                   1                  1.0                   0.0             8
+ CUST001463                   1                  1.0                   0.0             9
+ CUST003536                   1                  1.0                   0.0             9
+ CUST000079                   1                  1.0                   0.0            10
+ CUST003910                   1                  1.0                   0.0            10
+ CUST006800                   1                  1.0                   0.0            10
+ CUST001296                   1                  1.0                   0.0            14
+ CUST001568                   1                  1.0                   0.0            14
+ CUST005917                   1                  1.0                   0.0            14
+(28 rows)
+
+==============================================================================
+Q37  Customer health score (0-100) for every ACTIVE customer, ranked by risk
+==============================================================================
+customer_id current_plan  days_since_last_activity  failed_payment_rate  avg_support_csat  tenure_days  risk_score_0_100  health_score_0_100  risk_rank
+ CUST000013        Basic                     339.0                0.067              1.00       1133.0              68.4                31.6          1
+ CUST002462        Basic                     365.0                0.125              3.26        269.0              68.3                31.7          2
+ CUST007011        Basic                     365.0                0.100              3.26        305.0              67.5                32.5          3
+ CUST007910        Basic                     358.0                0.071              3.00        445.0              66.4                33.6          4
+ CUST001874        Basic                     333.0                0.071              3.26        427.0              63.5                36.5          5
+ CUST001989        Basic                     292.0                0.067              2.00        651.0              63.5                36.5          6
+ CUST000396        Basic                     284.0                0.154              3.26        399.0              61.7                38.3          7
+ CUST000682        Basic                     357.0                0.000              3.26        843.0              61.4                38.6          8
+ CUST007036        Basic                     365.0                0.067              3.26       1435.0              60.4                39.6          9
+ CUST000725        Basic                     205.0                0.333              3.00        597.0              59.5                40.5         10
+ CUST002668      Premium                     365.0                0.000              1.00        135.0              59.4                40.6         11
+ CUST001528        Basic                       8.0                1.000              4.00         54.0              59.3                40.7         12
+ CUST000676        Basic                     182.0                0.400              3.00        789.0              58.3                41.7         13
+ CUST006633        Basic                     261.0                0.200              3.26        911.0              58.1                41.9         14
+ CUST004107        Basic                     200.0                0.167              2.50        375.0              58.1                41.9         15
+ CUST003149        Basic                      98.0                0.250              1.00        264.0              58.0                42.0         16
+ CUST001867        Basic                     365.0                0.000              5.00        393.0              58.0                42.0         17
+ CUST005663        Basic                     318.0                0.067              3.26       1198.0              57.9                42.1         18
+ CUST002190        Basic                     283.0                0.200              3.26       1302.0              57.7                42.3         19
+ CUST006237        Basic                     356.0                0.133              4.00       1585.0              57.7                42.3         20
+ CUST000719        Basic                     117.0                0.167              1.00        360.0              57.0                43.0         21
+ CUST006034        Basic                     267.0                0.133              3.26       1050.0              56.2                43.8         22
+ CUST006282        Basic                     335.0                0.000              3.26       1483.0              56.0                44.0         23
+ CUST004566        Basic                     218.0                0.200              3.26        665.0              55.9                44.1         24
+ CUST004314        Basic                     365.0                0.000              3.00       2150.0              55.8                44.2         25
+ CUST007185        Basic                     310.0                0.000              4.00        678.0              55.6                44.4         26
+ CUST003602        Basic                     318.0                0.200              3.26       2220.0              55.5                44.5         27
+ CUST000313        Basic                     265.0                0.000              3.26        540.0              55.5                44.5         28
+ CUST003968     Standard                     235.0                0.133              1.00        894.0              55.4                44.6         29
+ CUST005108        Basic                     276.0                0.000              1.00       2256.0              55.4                44.6         30
+ CUST005302        Basic                     321.0                0.000              2.00       2255.0              55.3                44.7         31
+ CUST004138        Basic                     365.0                0.067              4.00       1897.0              55.1                44.9         32
+ CUST004099        Basic                      62.0                0.250              1.00        264.0              55.0                45.0         33
+ CUST007300        Basic                     361.0                0.067              4.00       1847.0              55.0                45.0         34
+ CUST000688        Basic                     141.0                0.200              2.00        619.0              54.6                45.4         35
+ CUST001498        Basic                     175.0                0.200              3.26        303.0              54.4                45.6         36
+ CUST001100     Standard                     360.0                0.200              3.26       1745.0              54.1                45.9         37
+ CUST007060        Basic                     207.0                0.071              3.00        429.0              54.1                45.9         38
+ CUST000639        Basic                     253.0                0.000              3.26        620.0              54.1                45.9         39
+ CUST004630        Basic                     170.0                0.267              3.26        609.0              54.0                46.0         40
+ CUST000511        Basic                     244.0                0.200              3.50       1250.0              53.9                46.1         41
+ CUST003629     Standard                     295.0                0.000              2.33        543.0              53.9                46.1         42
+ CUST007932        Basic                     213.0                0.000              2.00        928.0              53.8                46.2         43
+ CUST003019     Standard                     291.0                0.067              2.00       1035.0              53.8                46.2         44
+ CUST004970        Basic                     246.0                0.133              4.00        683.0              53.7                46.3         45
+ CUST001015        Basic                     364.0                0.000              3.26       2344.0              53.6                46.4         46
+ CUST007706        Basic                     347.0                0.000              3.00       2291.0              53.5                46.5         47
+ CUST006335        Basic                     256.0                0.200              4.00       1177.0              53.4                46.6         48
+ CUST002803        Basic                      85.0                0.200              1.00        674.0              53.4                46.6         49
+ CUST000026        Basic                     119.0                0.286              3.00        212.0              53.4                46.6         50
+ CUST000058        Basic                     129.0                0.286              3.26        210.0              53.3                46.7         51
+ CUST003692        Basic                     172.0                0.400              3.26       1380.0              53.2                46.8         52
+ CUST000703        Basic                     141.0                0.267              3.00        500.0              53.2                46.8         53
+ CUST001614        Basic                     292.0                0.133              5.00        804.0              53.0                47.0         54
+ CUST007083        Basic                      54.0                0.400              2.50        173.0              53.0                47.0         55
+ CUST007938        Basic                     156.0                0.200              1.00       1872.0              52.6                47.4         56
+ CUST005463        Basic                     209.0                0.067              1.00       2059.0              52.6                47.4         57
+ CUST002373        Basic                     135.0                0.200              2.67        462.0              52.5                47.5         58
+ CUST007557        Basic                     201.0                0.133              3.26        757.0              52.4                47.6         59
+ CUST006147        Basic                     155.0                0.133              2.33        710.0              52.3                47.7         60
+... (6009 rows total, first 60 shown)
