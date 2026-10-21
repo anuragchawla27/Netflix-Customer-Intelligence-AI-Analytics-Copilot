@@ -1,0 +1,44 @@
+feature,group,source,description,type
+age,Customer,PRD,Age (imputed where missing during cleaning),numeric
+gender,Customer,PRD,Gender,categorical
+country,Customer,PRD,Country (standardised),categorical
+customer_segment,Customer,PRD,Individual / Family / Student / Corporate Bundle,categorical
+acquisition_channel,Customer,PRD,How the customer was acquired,categorical
+customer_tenure_days,Customer,PRD,Days from registration to the cutoff,numeric
+plan_name,Subscription,PRD,Plan the customer is on at the cutoff,categorical
+monthly_price,Subscription,PRD,Catalog price of that plan,numeric
+auto_renew,Subscription,EDA,1 if auto-renew is on (chart 23: off = higher churn),numeric
+plan_changes,Subscription,PRD,Number of plan switches up to the cutoff,numeric
+watch_min_30d,Engagement,PRD,Minutes watched in the 30 days before the cutoff,numeric
+watch_min_90d,Engagement,PRD,Minutes watched in the 90 days before the cutoff,numeric
+watch_min_180d,Engagement,EDA,Minutes watched in the 180 days before the cutoff,numeric
+sessions_30d,Engagement,PRD,Viewing sessions in the last 30 days,numeric
+sessions_90d,Engagement,PRD,Viewing sessions in the last 90 days,numeric
+avg_watch_time_per_session,Engagement,PRD,Mean minutes watched per session (all history up to the cutoff),numeric
+monthly_watch_time_trend,Engagement,PRD,Slope of monthly watch minutes over the last 6 months (minutes per month),numeric
+watch_change_30d_pct,Engagement,EDA,"Last 30 days vs the 30 days before, as a fraction (capped at -1..+5)",numeric
+days_since_last_activity,Engagement,PRD,Days since the last viewing session (days observable if none),numeric
+login_frequency,Engagement,PRD,Sessions per active month over the last 90 days,numeric
+avg_completion_pct,Engagement,EDA,Mean completion % of sessions (completion drives satisfaction),numeric
+n_devices,Engagement,EDA,Distinct device types used,numeric
+mobile_share,Engagement,EDA,Share of watch minutes on Mobile (chart 15),numeric
+n_genres,Engagement,EDA,Distinct genres watched (breadth of interest),numeric
+engagement_score,Engagement,PRD,"0-100 composite of recency, frequency and watch depth",numeric
+payments_total,Billing,PRD,Payment attempts up to the cutoff,numeric
+failed_payment_count,Billing,PRD,Failed payments up to the cutoff,numeric
+failed_payment_rate,Billing,PRD,Failed / attempted payments,numeric
+failed_payments_90d,Billing,EDA,Failed payments in the last 90 days (chart 21),numeric
+days_since_last_failed_payment,Billing,EDA,Days since the latest failed payment (NaN if none),numeric
+payment_anomaly_count,Billing,EDA,Payments with an unusual amount (proration / refund / error),numeric
+primary_payment_method,Billing,EDA,Most used payment method,categorical
+customer_lifetime_value,Billing,PRD,Sum of successful payments up to the cutoff,numeric
+support_ticket_count,Support,PRD,Tickets raised up to the cutoff (chart 22),numeric
+tickets_90d,Support,EDA,Tickets raised in the last 90 days,numeric
+billing_ticket_count,Support,EDA,"Billing & Payments tickets (lowest CSAT, chart 29)",numeric
+open_ticket_count,Support,EDA,Tickets still unresolved at the cutoff,numeric
+avg_resolution_hours,Support,EDA,Mean hours to resolve tickets resolved by the cutoff,numeric
+avg_customer_satisfaction,Support,PRD,Mean CSAT of tickets resolved by the cutoff,numeric
+days_since_last_ticket,Support,EDA,Days since the latest ticket (NaN if none),numeric
+feedback_count,Feedback,EDA,Reviews submitted up to the cutoff,numeric
+avg_rating,Feedback,EDA,Mean star rating of those reviews,numeric
+negative_feedback_count,Feedback,EDA,Reviews with negative (corrected) sentiment,numeric
