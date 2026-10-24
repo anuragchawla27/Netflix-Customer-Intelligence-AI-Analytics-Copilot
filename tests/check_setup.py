@@ -6,6 +6,7 @@ Run it from anywhere, with the project's virtual environment active:
 """
 import importlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -85,9 +86,13 @@ nbdir = ROOT / "notebooks"
 for path in sorted(nbdir.glob("*.ipynb")) if nbdir.exists() else []:
     try:
         nb = json.load(open(path, encoding="utf-8"))
-        code = [c for c in nb["cells"] if c["cell_type"] == "code"]
+        code = [c for c in nb["cells"] if c["cell_type"] == "code" and "".join(c["source"]).strip()]   # ignore empty cells
         done = sum(1 for c in code if c.get("execution_count"))
         errs = sum(1 for c in code for o in c.get("outputs", []) if o["output_type"] == "error")
+        raw = path.read_text(encoding="utf-8")
+        if re.search(r"[A-Za-z]:\\\\Users\\\\", raw) or str(ROOT).replace("\\", "\\\\") in raw:
+            add("WARN", path.name + ": personal path", "your folder path is saved in this notebook (outputs or code)",
+                "Run  python tests\\scrub_notebooks.py : it cleans outputs and lists any code cell that still holds a path (edit those by hand). The repository is public.")
         if errs:
             add("FAIL", path.name, f"{errs} cell(s) saved with an error", "Fix the error and run the notebook again.")
         elif done == len(code):

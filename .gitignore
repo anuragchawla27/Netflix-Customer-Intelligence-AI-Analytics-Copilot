@@ -11,8 +11,6 @@ Thumbs.db
 # Large/generated artifacts
 data/processed/*.csv
 data/processed/*.parquet
-models/*.pkl
-models/*.joblib
 
 # Raw data stays local (add a note in README on where to get it)
 data/raw/*.csv
@@ -20,3 +18,5 @@ data/raw/*.csv
 # Vector store (created in Week 3)
 chroma_db/
 *.faiss
+data/processed/*.json
+data/processed/*.json
