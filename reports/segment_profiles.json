@@ -1,0 +1,58 @@
+[
+  {
+    "segment":"High-Spend, High-Value Plan",
+    "customers":2415,
+    "share_%":34.8,
+    "churn_next_6m_%":16.0,
+    "avg_monthly_price":18.62,
+    "MRR_share_%":48.1,
+    "avg_tenure_days":1358.0,
+    "avg_engagement":53.6,
+    "failed_payment_rate":0.05,
+    "avg_tickets":0.43,
+    "avg_csat":2.6,
+    "avg_lifetime_value":253.0
+  },
+  {
+    "segment":"Support-Heavy, Highly Engaged",
+    "customers":968,
+    "share_%":14.0,
+    "churn_next_6m_%":15.9,
+    "avg_monthly_price":12.38,
+    "MRR_share_%":12.8,
+    "avg_tenure_days":1386.0,
+    "avg_engagement":54.8,
+    "failed_payment_rate":0.075,
+    "avg_tickets":1.64,
+    "avg_csat":4.13,
+    "avg_lifetime_value":164.0
+  },
+  {
+    "segment":"Low-Spend, Budget Plan (At-Risk)",
+    "customers":2158,
+    "share_%":31.1,
+    "churn_next_6m_%":21.0,
+    "avg_monthly_price":8.22,
+    "MRR_share_%":19.0,
+    "avg_tenure_days":1136.0,
+    "avg_engagement":55.9,
+    "failed_payment_rate":0.082,
+    "avg_tickets":0.37,
+    "avg_csat":2.46,
+    "avg_lifetime_value":89.0
+  },
+  {
+    "segment":"Low-Engagement",
+    "customers":1398,
+    "share_%":20.1,
+    "churn_next_6m_%":18.2,
+    "avg_monthly_price":13.47,
+    "MRR_share_%":20.1,
+    "avg_tenure_days":1254.0,
+    "avg_engagement":1.4,
+    "failed_payment_rate":0.052,
+    "avg_tickets":0.59,
+    "avg_csat":3.26,
+    "avg_lifetime_value":175.0
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "k": 4,
+  "features": [
+    "watch_min_90d",
+    "sessions_90d",
+    "support_ticket_count",
+    "customer_tenure_days",
+    "avg_watch_time_per_session",
+    "days_since_last_activity",
+    "engagement_score",
+    "failed_payment_rate",
+    "avg_customer_satisfaction",
+    "monthly_price",
+    "customer_lifetime_value"
+  ],
+  "names": {
+    "0": "High-Spend, High-Value Plan",
+    "1": "Support-Heavy, Highly Engaged",
+    "2": "Low-Spend, Budget Plan (At-Risk)",
+    "3": "Low-Engagement"
+  },
+  "train_cutoff": "2025-12-31",
+  "silhouette": 0.19699189919622093,
+  "stability_ari": 0.9981324147598798
+}

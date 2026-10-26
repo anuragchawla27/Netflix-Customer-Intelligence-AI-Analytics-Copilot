@@ -1,0 +1,5 @@
+segment,customers,share_%,churn_next_6m_%,avg_monthly_price,MRR_share_%,avg_tenure_days,avg_engagement,failed_payment_rate,avg_tickets,avg_csat,avg_lifetime_value
+"High-Spend, High-Value Plan",2415,34.8,16.0,18.62,48.1,1358.0,53.6,0.05,0.43,2.6,253.0
+"Support-Heavy, Highly Engaged",968,14.0,15.9,12.38,12.8,1386.0,54.8,0.075,1.64,4.13,164.0
+"Low-Spend, Budget Plan (At-Risk)",2158,31.1,21.0,8.22,19.0,1136.0,55.9,0.082,0.37,2.46,89.0
+Low-Engagement,1398,20.1,18.2,13.47,20.1,1254.0,1.4,0.052,0.59,3.26,175.0
